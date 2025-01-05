@@ -8,35 +8,47 @@ function PersonalDetails({ personalDetails, setPersonalDetails }) {
 
   return (
     <div className="form-section">
-      <h2>Personal Details</h2>
-      <input
-        type="text"
-        name="name"
-        placeholder="Full Name"
-        value={personalDetails.name}
-        onChange={handleChange}
-      />
-      <input
-        type="email"
-        name="email"
-        placeholder="Email"
-        value={personalDetails.email}
-        onChange={handleChange}
-      />
-      <input
-        type="tel"
-        name="phone"
-        placeholder="Phone"
-        value={personalDetails.phone}
-        onChange={handleChange}
-      />
-      <input
-        type="text"
-        name="address"
-        placeholder="Address"
-        value={personalDetails.address}
-        onChange={handleChange}
-      />
+      <h2 className="section-title">Personal Details</h2>
+      <div className="input-group">
+        <label>Full Name</label>
+        <input
+          type="text"
+          name="name"
+          placeholder="John Doe"
+          value={personalDetails.name}
+          onChange={handleChange}
+        />
+      </div>
+      <div className="input-group">
+        <label>Email</label>
+        <input
+          type="email"
+          name="email"
+          placeholder="john.doe@example.com"
+          value={personalDetails.email}
+          onChange={handleChange}
+        />
+      </div>
+      <div className="input-group">
+        <label>Phone</label>
+        <input
+          type="tel"
+          name="phone"
+          placeholder="+1234567890"
+          value={personalDetails.phone}
+          onChange={handleChange}
+        />
+      </div>
+      <div className="input-group">
+        <label>Address</label>
+        <input
+          type="text"
+          name="address"
+          placeholder="123 Main St, City, Country"
+          value={personalDetails.address}
+          onChange={handleChange}
+        />
+      </div>
     </div>
   );
 }
