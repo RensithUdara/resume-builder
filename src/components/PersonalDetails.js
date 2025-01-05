@@ -1,6 +1,6 @@
 import React from "react";
 
-function PersonalDetails({ personalDetails, setPersonalDetails }) {
+function PersonalDetails({ personalDetails, setPersonalDetails, handleProfilePicture }) {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setPersonalDetails({ ...personalDetails, [name]: value });
@@ -17,6 +17,7 @@ function PersonalDetails({ personalDetails, setPersonalDetails }) {
           placeholder="John Doe"
           value={personalDetails.name}
           onChange={handleChange}
+          required
         />
       </div>
       <div className="input-group">
@@ -27,6 +28,7 @@ function PersonalDetails({ personalDetails, setPersonalDetails }) {
           placeholder="john.doe@example.com"
           value={personalDetails.email}
           onChange={handleChange}
+          required
         />
       </div>
       <div className="input-group">
@@ -37,6 +39,7 @@ function PersonalDetails({ personalDetails, setPersonalDetails }) {
           placeholder="+1234567890"
           value={personalDetails.phone}
           onChange={handleChange}
+          required
         />
       </div>
       <div className="input-group">
@@ -47,6 +50,15 @@ function PersonalDetails({ personalDetails, setPersonalDetails }) {
           placeholder="123 Main St, City, Country"
           value={personalDetails.address}
           onChange={handleChange}
+          required
+        />
+      </div>
+      <div className="input-group">
+        <label>Profile Picture</label>
+        <input
+          type="file"
+          accept="image/*"
+          onChange={handleProfilePicture}
         />
       </div>
     </div>
