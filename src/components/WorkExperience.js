@@ -10,34 +10,43 @@ function WorkExperience({ workExperience, setWorkExperience, addWorkExperience }
 
   return (
     <div className="form-section">
-      <h2>Work Experience</h2>
+      <h2 className="section-title">Work Experience</h2>
       {workExperience.map((work, index) => (
-        <div key={index}>
-          <input
-            type="text"
-            name="company"
-            placeholder="Company"
-            value={work.company}
-            onChange={(e) => handleChange(e, index)}
-          />
-          <input
-            type="text"
-            name="position"
-            placeholder="Position"
-            value={work.position}
-            onChange={(e) => handleChange(e, index)}
-          />
-          <input
-            type="text"
-            name="duration"
-            placeholder="Duration"
-            value={work.duration}
-            onChange={(e) => handleChange(e, index)}
-          />
+        <div key={index} className="work-item">
+          <div className="input-group">
+            <label>Company</label>
+            <input
+              type="text"
+              name="company"
+              placeholder="Tech Corp"
+              value={work.company}
+              onChange={(e) => handleChange(e, index)}
+            />
+          </div>
+          <div className="input-group">
+            <label>Position</label>
+            <input
+              type="text"
+              name="position"
+              placeholder="Software Engineer"
+              value={work.position}
+              onChange={(e) => handleChange(e, index)}
+            />
+          </div>
+          <div className="input-group">
+            <label>Duration</label>
+            <input
+              type="text"
+              name="duration"
+              placeholder="Jan 2020 - Present"
+              value={work.duration}
+              onChange={(e) => handleChange(e, index)}
+            />
+          </div>
         </div>
       ))}
-      <button type="button" onClick={addWorkExperience}>
-        Add Work Experience
+      <button type="button" className="add-button" onClick={addWorkExperience}>
+        + Add Work Experience
       </button>
     </div>
   );
