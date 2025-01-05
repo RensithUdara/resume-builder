@@ -12,17 +12,19 @@ function Skills({ skills, setSkills }) {
 
   return (
     <div className="form-section">
-      <h2 className="section-title">Skills</h2>
+      <h2 className="section-title">
+        <i className="fas fa-tools"></i> Skills
+      </h2>
       <div className="input-group">
-        <label>Add Skill</label>
         <input
           type="text"
-          placeholder="e.g., JavaScript, React"
+          placeholder=" "
           value={skill}
           onChange={(e) => setSkill(e.target.value)}
         />
+        <label>Add Skill</label>
         <button type="button" className="add-button" onClick={addSkill}>
-          + Add Skill
+          <i className="fas fa-plus"></i> Add Skill
         </button>
       </div>
       <ul className="skills-list">
