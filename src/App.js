@@ -34,9 +34,9 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Online Resume Builder</h1>
-      <div className="builder">
-        <div className="forms">
+      <h1 className="app-title">Online Resume Builder</h1>
+      <div className="builder-container">
+        <div className="forms-container">
           <PersonalDetails
             personalDetails={personalDetails}
             setPersonalDetails={setPersonalDetails}
