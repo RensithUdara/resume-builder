@@ -1,48 +1,131 @@
+/* General Styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+}
+
 .App {
-  font-family: Arial, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 20px;
 }
 
-.builder {
+.app-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.builder-container {
   display: flex;
   gap: 20px;
 }
 
-.forms {
+.forms-container {
   flex: 1;
-}
-
-.form-section {
-  margin-bottom: 20px;
-}
-
-input {
-  display: block;
-  margin-bottom: 10px;
-  padding: 8px;
-  width: 100%;
-}
-
-button {
-  padding: 8px 12px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #0056b3;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .resume-preview {
   flex: 1;
-  border: 1px solid #ccc;
+  background: #fff;
   padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Form Sections */
+.form-section {
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.add-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.add-button:hover {
+  background-color: #0056b3;
+}
+
+/* Resume Preview */
 .resume {
-  background-color: #f9f9f9;
+  background: #f9f9f9;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 8px;
+}
+
+.resume-name {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.resume-contact {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.resume-section {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.resume-item {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+}
+
+.skill-item {
+  display: inline-block;
+  background: #007bff;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 4px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-size: 14px;
 }
