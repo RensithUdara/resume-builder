@@ -10,43 +10,48 @@ function Education({ education, setEducation, addEducation }) {
 
   return (
     <div className="form-section">
-      <h2 className="section-title">Education</h2>
+      <h2 className="section-title">
+        <i className="fas fa-graduation-cap"></i> Education
+      </h2>
       {education.map((edu, index) => (
         <div key={index} className="education-item">
           <div className="input-group">
-            <label>Institution</label>
             <input
               type="text"
               name="institution"
-              placeholder="University of Example"
+              placeholder=" "
               value={edu.institution}
               onChange={(e) => handleChange(e, index)}
+              required
             />
+            <label>Institution</label>
           </div>
           <div className="input-group">
-            <label>Degree</label>
             <input
               type="text"
               name="degree"
-              placeholder="Bachelor of Science"
+              placeholder=" "
               value={edu.degree}
               onChange={(e) => handleChange(e, index)}
+              required
             />
+            <label>Degree</label>
           </div>
           <div className="input-group">
-            <label>Year</label>
             <input
               type="text"
               name="year"
-              placeholder="2015 - 2019"
+              placeholder=" "
               value={edu.year}
               onChange={(e) => handleChange(e, index)}
+              required
             />
+            <label>Year</label>
           </div>
         </div>
       ))}
       <button type="button" className="add-button" onClick={addEducation}>
-        + Add Education
+        <i className="fas fa-plus"></i> Add Education
       </button>
     </div>
   );
