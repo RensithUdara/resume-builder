@@ -8,50 +8,52 @@ function PersonalDetails({ personalDetails, setPersonalDetails, handleProfilePic
 
   return (
     <div className="form-section">
-      <h2 className="section-title">Personal Details</h2>
+      <h2 className="section-title">
+        <i className="fas fa-user"></i> Personal Details
+      </h2>
       <div className="input-group">
-        <label>Full Name</label>
         <input
           type="text"
           name="name"
-          placeholder="John Doe"
+          placeholder=" "
           value={personalDetails.name}
           onChange={handleChange}
           required
         />
+        <label>Full Name</label>
       </div>
       <div className="input-group">
-        <label>Email</label>
         <input
           type="email"
           name="email"
-          placeholder="john.doe@example.com"
+          placeholder=" "
           value={personalDetails.email}
           onChange={handleChange}
           required
         />
+        <label>Email</label>
       </div>
       <div className="input-group">
-        <label>Phone</label>
         <input
           type="tel"
           name="phone"
-          placeholder="+1234567890"
+          placeholder=" "
           value={personalDetails.phone}
           onChange={handleChange}
           required
         />
+        <label>Phone</label>
       </div>
       <div className="input-group">
-        <label>Address</label>
         <input
           type="text"
           name="address"
-          placeholder="123 Main St, City, Country"
+          placeholder=" "
           value={personalDetails.address}
           onChange={handleChange}
           required
         />
+        <label>Address</label>
       </div>
       <div className="input-group">
         <label>Profile Picture</label>
@@ -59,6 +61,7 @@ function PersonalDetails({ personalDetails, setPersonalDetails, handleProfilePic
           type="file"
           accept="image/*"
           onChange={handleProfilePicture}
+          className="file-input"
         />
       </div>
     </div>
