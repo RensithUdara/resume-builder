@@ -4,6 +4,9 @@ import Education from "./components/Education";
 import WorkExperience from "./components/WorkExperience";
 import Skills from "./components/Skills";
 import ResumePreview from "./components/ResumePreview";
+import { saveAs } from "file-saver";
+import html2canvas from "html2canvas";
+import jsPDF from "jspdf";
 import "./App.css";
 
 function App() {
@@ -12,6 +15,7 @@ function App() {
     email: "",
     phone: "",
     address: "",
+    profilePicture: null,
   });
 
   const [education, setEducation] = useState([
@@ -23,6 +27,7 @@ function App() {
   ]);
 
   const [skills, setSkills] = useState([]);
+  const [darkMode, setDarkMode] = useState(false);
 
   const addEducation = () => {
     setEducation([...education, { institution: "", degree: "", year: "" }]);
@@ -32,14 +37,47 @@ function App() {
     setWorkExperience([...workExperience, { company: "", position: "", duration: "" }]);
   };
 
+  const handleProfilePicture = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = () => {
+        setPersonalDetails({ ...personalDetails, profilePicture: reader.result });
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const downloadResume = () => {
+    const resumeElement = document.getElementById("resume-preview");
+    html2canvas(resumeElement).then((canvas) => {
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF();
+      const imgProps = pdf.getImageProperties(imgData);
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+      pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
+      pdf.save("resume.pdf");
+    });
+  };
+
   return (
-    <div className="App">
+    <div className={`App ${darkMode ? "dark-mode" : ""}`}>
       <h1 className="app-title">Online Resume Builder</h1>
+      <div className="controls">
+        <button onClick={() => setDarkMode(!darkMode)} className="mode-toggle">
+          {darkMode ? "Light Mode" : "Dark Mode"}
+        </button>
+        <button onClick={downloadResume} className="download-button">
+          Download Resume
+        </button>
+      </div>
       <div className="builder-container">
         <div className="forms-container">
           <PersonalDetails
             personalDetails={personalDetails}
             setPersonalDetails={setPersonalDetails}
+            handleProfilePicture={handleProfilePicture}
           />
           <Education education={education} setEducation={setEducation} addEducation={addEducation} />
           <WorkExperience
