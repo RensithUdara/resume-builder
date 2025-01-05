@@ -10,43 +10,48 @@ function WorkExperience({ workExperience, setWorkExperience, addWorkExperience }
 
   return (
     <div className="form-section">
-      <h2 className="section-title">Work Experience</h2>
+      <h2 className="section-title">
+        <i className="fas fa-briefcase"></i> Work Experience
+      </h2>
       {workExperience.map((work, index) => (
         <div key={index} className="work-item">
           <div className="input-group">
-            <label>Company</label>
             <input
               type="text"
               name="company"
-              placeholder="Tech Corp"
+              placeholder=" "
               value={work.company}
               onChange={(e) => handleChange(e, index)}
+              required
             />
+            <label>Company</label>
           </div>
           <div className="input-group">
-            <label>Position</label>
             <input
               type="text"
               name="position"
-              placeholder="Software Engineer"
+              placeholder=" "
               value={work.position}
               onChange={(e) => handleChange(e, index)}
+              required
             />
+            <label>Position</label>
           </div>
           <div className="input-group">
-            <label>Duration</label>
             <input
               type="text"
               name="duration"
-              placeholder="Jan 2020 - Present"
+              placeholder=" "
               value={work.duration}
               onChange={(e) => handleChange(e, index)}
+              required
             />
+            <label>Duration</label>
           </div>
         </div>
       ))}
       <button type="button" className="add-button" onClick={addWorkExperience}>
-        + Add Work Experience
+        <i className="fas fa-plus"></i> Add Work Experience
       </button>
     </div>
   );
