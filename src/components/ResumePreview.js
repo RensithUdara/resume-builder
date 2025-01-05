@@ -21,7 +21,9 @@ function ResumePreview({ personalDetails, education, workExperience, skills }) {
           </div>
         </div>
 
-        <h4 className="resume-section">Education</h4>
+        <h4 className="resume-section">
+          <i className="fas fa-graduation-cap"></i> Education
+        </h4>
         <ul>
           {education.map((edu, index) => (
             <li key={index} className="resume-item">
@@ -30,7 +32,9 @@ function ResumePreview({ personalDetails, education, workExperience, skills }) {
           ))}
         </ul>
 
-        <h4 className="resume-section">Work Experience</h4>
+        <h4 className="resume-section">
+          <i className="fas fa-briefcase"></i> Work Experience
+        </h4>
         <ul>
           {workExperience.map((work, index) => (
             <li key={index} className="resume-item">
@@ -39,7 +43,9 @@ function ResumePreview({ personalDetails, education, workExperience, skills }) {
           ))}
         </ul>
 
-        <h4 className="resume-section">Skills</h4>
+        <h4 className="resume-section">
+          <i className="fas fa-tools"></i> Skills
+        </h4>
         <ul className="skills-list">
           {skills.map((skill, index) => (
             <li key={index} className="skill-item">
