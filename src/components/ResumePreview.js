@@ -2,13 +2,24 @@ import React from "react";
 
 function ResumePreview({ personalDetails, education, workExperience, skills }) {
   return (
-    <div className="resume-preview">
+    <div className="resume-preview" id="resume-preview">
       <h2 className="preview-title">Resume Preview</h2>
       <div className="resume">
-        <h3 className="resume-name">{personalDetails.name}</h3>
-        <p className="resume-contact">
-          {personalDetails.email} | {personalDetails.phone} | {personalDetails.address}
-        </p>
+        <div className="resume-header">
+          {personalDetails.profilePicture && (
+            <img
+              src={personalDetails.profilePicture}
+              alt="Profile"
+              className="profile-picture"
+            />
+          )}
+          <div>
+            <h3 className="resume-name">{personalDetails.name}</h3>
+            <p className="resume-contact">
+              {personalDetails.email} | {personalDetails.phone} | {personalDetails.address}
+            </p>
+          </div>
+        </div>
 
         <h4 className="resume-section">Education</h4>
         <ul>
